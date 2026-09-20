@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QCoreApplication::setOrganizationName("Collett");
-    QCoreApplication::setOrganizationDomain("vkbo.net");
+    QCoreApplication::setOrganizationDomain("saga-soft.io");
     QCoreApplication::setApplicationName("Collett");
     QCoreApplication::setApplicationVersion(COL_VERSION_STR);
 
@@ -135,7 +135,8 @@ int main(int argc, char *argv[])
     QCommandLineOption openPath(
         QStringList() << "o" << "open",
         QCoreApplication::translate("main", "Open the <path> project on launch."),
-        QCoreApplication::translate("main", "path"));
+        QCoreApplication::translate("main", "path")
+    );
     parser.addOption(openPath);
     parser.process(app);
 
