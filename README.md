@@ -69,3 +69,6 @@ to `build_cov/coverage/index.html`:
 cmake -S . -B build_cov -DCMAKE_BUILD_TYPE=Debug -DCOLLETT_COVERAGE=ON
 cmake --build build_cov --target coverage
 ```
+
+CI runs the same coverage build on every push and pull request. The report is written to the job's summary page, and
+on pull requests it is also posted as an updating comment on the PR.
