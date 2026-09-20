@@ -67,18 +67,18 @@ GuiAppToolBar::~GuiAppToolBar()
 void GuiAppToolBar::updateThemeMode()
 {
     switch (m_settings->themeMode()) {
-        case ThemeMode::LightTheme:
-            m_btnTheme->setThemeIcon("theme_light", ThemeColor::ToolColor);
-            m_btnTheme->setToolTip(tr("Light Theme"));
-            break;
-        case ThemeMode::DarkTheme:
-            m_btnTheme->setThemeIcon("theme_dark", ThemeColor::ToolColor);
-            m_btnTheme->setToolTip(tr("Dark Theme"));
-            break;
-        default:
-            m_btnTheme->setThemeIcon("theme_auto", ThemeColor::ToolColor);
-            m_btnTheme->setToolTip(tr("System Theme"));
-            break;
+    case ThemeMode::LightTheme:
+        m_btnTheme->setThemeIcon("theme_light", ThemeColor::ToolColor);
+        m_btnTheme->setToolTip(tr("Light Theme"));
+        break;
+    case ThemeMode::DarkTheme:
+        m_btnTheme->setThemeIcon("theme_dark", ThemeColor::ToolColor);
+        m_btnTheme->setToolTip(tr("Dark Theme"));
+        break;
+    default:
+        m_btnTheme->setThemeIcon("theme_auto", ThemeColor::ToolColor);
+        m_btnTheme->setToolTip(tr("System Theme"));
+        break;
     }
 }
 
@@ -90,9 +90,9 @@ void GuiAppToolBar::updateThemeMode()
 void GuiAppToolBar::cycleThemeMode()
 {
     switch (m_settings->themeMode()) {
-        case ThemeMode::AutoTheme: m_settings->setThemeMode(ThemeMode::LightTheme); break;
-        case ThemeMode::LightTheme: m_settings->setThemeMode(ThemeMode::DarkTheme); break;
-        default: m_settings->setThemeMode(ThemeMode::AutoTheme); break;
+    case ThemeMode::AutoTheme: m_settings->setThemeMode(ThemeMode::LightTheme); break;
+    case ThemeMode::LightTheme: m_settings->setThemeMode(ThemeMode::DarkTheme); break;
+    default: m_settings->setThemeMode(ThemeMode::AutoTheme); break;
     }
     m_theme->loadTheme();
     this->updateThemeMode();

@@ -5,6 +5,7 @@ _temp/
 
 # IDE
 .vscode/
+.pytest_cache/
 
 # No AI files
 AGENTS.md
