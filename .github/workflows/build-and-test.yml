@@ -20,9 +20,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            cmake ninja-build \
+            cmake ninja-build clang-format \
             qt6-base-dev qt6-svg-dev qt6-tools-dev qt6-l10n-tools \
             libnuspell-dev
+
+      - name: Check Formatting
+        run: |
+          find src tests -regex '.*\.\(h\|cpp\)' -print0 | xargs -0 clang-format --dry-run --Werror
 
       - name: Configure
         run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
