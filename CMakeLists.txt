@@ -145,7 +145,8 @@ if(COLLETT_COVERAGE)
                 --filter ${CMAKE_SOURCE_DIR}/src/
                 --exclude ".*autogen.*"
                 --gcov-ignore-parse-errors
-                --txt
+                --txt ${CMAKE_BINARY_DIR}/coverage/coverage.txt
+                --markdown-heading-level 4
                 --markdown ${CMAKE_BINARY_DIR}/coverage/coverage.md
                 --html-details ${CMAKE_BINARY_DIR}/coverage/index.html
                 --cobertura-pretty --cobertura ${CMAKE_BINARY_DIR}/coverage/coverage.xml
