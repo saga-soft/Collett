@@ -218,9 +218,9 @@ bool Theme::loadTheme()
 {
     bool darkMode = false;
     switch (m_settings->themeMode()) {
-        case ThemeMode::LightTheme: darkMode = false; break;
-        case ThemeMode::DarkTheme: darkMode = true; break;
-        default: darkMode = this->isDesktopDarkMode(); break;
+    case ThemeMode::LightTheme: darkMode = false; break;
+    case ThemeMode::DarkTheme: darkMode = true; break;
+    default: darkMode = this->isDesktopDarkMode(); break;
     }
 
     QString key = darkMode ? m_settings->darkTheme() : m_settings->lightTheme();

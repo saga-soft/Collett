@@ -26,6 +26,12 @@ sudo apt install cmake \
 Spell checking needs at least one Hunspell-compatible dictionary, for instance `hunspell-en-gb` or `hunspell-nb`.
 Coverage reports need `gcovr`, which can be installed with `pip install gcovr`.
 
+Formatting checks need `clang-format`, which can be installed with:
+
+```bash
+sudo apt install clang-format
+```
+
 ### Build
 
 ```bash
@@ -47,6 +53,12 @@ cd build && ctest --output-on-failure
 
 A single test executable can also be run directly, for instance `./build/tests/tst_spellcheck`.
 Pass `-DCOLLETT_BUILD_TESTS=OFF` to CMake to skip building the tests.
+
+### Formatting
+
+Source files are formatted according to the `.clang-format` file in the repository root. Requires `clang-format` to
+be installed. Run `./format.sh` to format all source files in place before making a pull request, or `./format.sh
+--check` to only check for violations without changing anything, as done in CI.
 
 ### Coverage
 

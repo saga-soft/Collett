@@ -25,8 +25,7 @@ jobs:
             libnuspell-dev
 
       - name: Check Formatting
-        run: |
-          find src tests -regex '.*\.\(h\|cpp\)' -print0 | xargs -0 clang-format --dry-run --Werror
+        run: ./format.sh --check
 
       - name: Configure
         run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release

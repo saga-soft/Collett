@@ -347,16 +347,28 @@ void Document::refreshTextFormat()
         QTextBlockFormat baseBlock = format.blockParagraph;
         QTextCharFormat baseChar = format.charParagraph;
         switch (blockFormat.headingLevel()) {
-            case 1: baseBlock = format.blockHeader1; baseChar = format.charHeader1; break;
-            case 2: baseBlock = format.blockHeader2; baseChar = format.charHeader2; break;
-            case 3: baseBlock = format.blockHeader3; baseChar = format.charHeader3; break;
-            case 4: baseBlock = format.blockHeader4; baseChar = format.charHeader4; break;
-            default:
-                if (blockFormat.intProperty(BlockTypeProperty) == CommentBlock) {
-                    baseBlock = format.blockComment;
-                    baseChar = format.charComment;
-                }
-                break;
+        case 1:
+            baseBlock = format.blockHeader1;
+            baseChar = format.charHeader1;
+            break;
+        case 2:
+            baseBlock = format.blockHeader2;
+            baseChar = format.charHeader2;
+            break;
+        case 3:
+            baseBlock = format.blockHeader3;
+            baseChar = format.charHeader3;
+            break;
+        case 4:
+            baseBlock = format.blockHeader4;
+            baseChar = format.charHeader4;
+            break;
+        default:
+            if (blockFormat.intProperty(BlockTypeProperty) == CommentBlock) {
+                baseBlock = format.blockComment;
+                baseChar = format.charComment;
+            }
+            break;
         }
 
         blockFormat.setTopMargin(baseBlock.topMargin());
